@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-NGMD66K</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAACAAAAAAAQZgAAAAEAACAAAAAznJy7MNVC/5Ym2AAbH5Xk0hdkVp77xUy9e0hJPwDuvQAAAAAOgAAAAAIAACAAAAA2C07HS7aB1ghTOhVQquPDHJxA2B6xq/RNbRAKN6r47ZAAAAC2vD5rB4QJZmABmp6sxHCPAusOYNyiJyfFLJWLjEYeaIxp0HFgnIL/fK4MNgORpi20WbQpbGEnPI6/BdRtQUHkxUW+vUCUU0myjkH/bfXK65VE/8SUlYeYNFTRsAITpO5vzM82KLoFljW8ikAQq2NMq9FwzUJGNpqBbwhCiXN/9NSVbV+tPtnhtGGZg9HD0adAAAAA5oNcL3vuTgPy1KoUf85a96uNQhPdl2fLUdyP4qpGhlqDemmggUWY7hhK9wm1M0VBAPAGl3V0y+AB6tkdFtAG0A==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAACAAAAAAAQZgAAAAEAACAAAADmb9q+UuE5S/NHUD9Ms6EOWGGKjLzDvUEvYefS5bJxlgAAAAAOgAAAAAIAACAAAAC9lx6Pfe3YtUFC3/pBe1KTaLNb2LyLvxOPmAnYDeKdFJAAAACpw7cHTfz2/wElNCCAdsBTN3Oq1Nu2zdRu5qRkz6OFuXPutmoffxbz4qshCbbCaongajTaHPC9kyY55Bc49oij3Wf+/bf39dU+K1DXm1MkBytmBun3vOvPaqBZZOgkA2qLazjdEtrIjIBpCo6HvP44MlGGykexJVw8MaDqDBVV4LyJXoNWjQ1hzU2zytbc8hBAAAAAC4hFhty5nV7w6htbS5qGgzvJSj8GbRFwnEaXXSNCJiNscQcGNf6/J+D9BmDyfJfOxZIcdknbSdchuYMxazdbdw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -48,10 +48,10 @@
                 <SSIS:Property SSIS:Name="Name">Cargar EXCEL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">45</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">47</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D5883894-5E57-42F9-A73F-E3B7583E1173}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F6C30CE0-C0CA-47B9-9E8A-B74AE07727B1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -232,7 +232,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Employee.xlsm;Extended Properties="Excel 12.0 MACRO;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Employee.xlsx;Extended Properties="Excel 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -247,7 +247,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Employee.xlsm</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Employee.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -320,7 +320,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Employee.xlsm</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Employee.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -364,7 +364,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Holidays.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Holidays.xlsm;Extended Properties="Excel 12.0 MACRO;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -379,7 +379,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Holidays.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Holidays.xlsm</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -452,7 +452,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Holidays.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Holidays.xlsm</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1236,10 +1236,10 @@
                 <SSIS:Property SSIS:Name="Name">SQL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">79</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">88</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C41C05ED-EFC2-48C2-A71B-333CB5D69F4B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B71E6264-E3D2-470F-AC36-4AA3D23D7475}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1964,10 +1964,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">141</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">145</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F0AC0261-DF79-4F40-9BEF-AB0575BC2777}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{522ECC97-7D9C-4C22-9E17-EF04D966C7E9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2432,6 +2432,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2627,6 +2629,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2970,6 +2974,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3011,10 +3017,10 @@
                 <SSIS:Property SSIS:Name="Name">REGION</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">31</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{446F666B-D5DA-47BE-8A31-3CE187C5CE24}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{91E37CBD-0B01-4E59-8B93-8B69E3DC7216}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3388,7 +3394,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Regions.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Regions.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3479,6 +3485,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3685,10 +3693,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">12</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5187F6B6-C086-40A7-9F38-B6B953A030A5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EEEB94EA-5DC6-4A55-B83C-6B6C4A4F63B9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
