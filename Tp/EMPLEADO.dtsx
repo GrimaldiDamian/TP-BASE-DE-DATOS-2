@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Cargar EXCEL"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{F6C30CE0-C0CA-47B9-9E8A-B74AE07727B1}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{90AF3757-FCE5-4AA8-8CAA-D5DF5FCAD1BD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Employee.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Employee.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Holidays.xlsm;Extended Properties=&quot;Excel 12.0 MACRO;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Holidays.xlsm;Extended Properties=&quot;EXCEL 12.0 MACRO;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager

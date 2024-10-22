@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="145"
-  DTS:VersionGUID="{522ECC97-7D9C-4C22-9E17-EF04D966C7E9}">
+  DTS:VersionBuild="150"
+  DTS:VersionGUID="{86F5F859-E35E-4A96-ABE5-13DC8800459C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -53,7 +53,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Products.txt">
+          DTS:ConnectionString="C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Products.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -62,7 +62,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Product_ID"
-              DTS:DTSID="{E86293AD-6512-464F-B3AF-B42D2D0F63AC}"
+              DTS:DTSID="{B94AB863-03BD-481D-B8DF-BA8B1EC1532C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -71,7 +71,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Description"
-              DTS:DTSID="{19F5A57A-E0D2-4676-AC9A-4B8CB4C1C179}"
+              DTS:DTSID="{6CE23772-E873-4858-8D45-6D54D23469E5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -80,7 +80,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Capacity"
-              DTS:DTSID="{081EFB1E-F53A-4E89-B940-E746F217274B}"
+              DTS:DTSID="{BB2F8AC0-D79E-4746-98B3-2DD4A08034E6}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -166,7 +166,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\tercer cuatri\Base de datos 2\archivos del tp\Datos del tp GRIMALDI PICCIRILLI\Stock.txt">
+          DTS:ConnectionString="C:\Users\grima\OneDrive\Escritorio\UNR\TUIA\3° cuatri\Base de datos 2\TP\datos del tp\Stock.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Stock_ID"
-              DTS:DTSID="{CA98DB5A-DCA4-4485-9D40-3F383C67ACB5}"
+              DTS:DTSID="{7FCFA0C0-8FD8-417C-8CFD-5274E3D83E60}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +184,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Fecha"
-              DTS:DTSID="{CE9BD2C6-9E5B-4D71-944E-B6469C1DC44E}"
+              DTS:DTSID="{0F32F8DA-3100-4A17-B57E-576A028988D4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +193,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cantidad"
-              DTS:DTSID="{D5E02A1A-AD22-4E26-AAFE-F76D0A20BBC3}"
+              DTS:DTSID="{5CD6D7DD-2EC3-4B6A-89BF-78D1D62E3B0C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -3784,13 +3784,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Cargar Producto temporal\Subdividir la segunda y tercera columna.Outputs[Derived Column Output].Columns[Magnitud]} == "cm3" ? #{Package\Cargar Producto temporal\Cambio de tipo.Outputs[Data Conversion Output].Columns[Copy of Cantidad]} / 1000 : #{Package\Cargar Producto temporal\Cambio de tipo.Outputs[Data Conversion Output].Columns[Copy of Cantidad]}</property>
+                          name="Expression">[ROUND]((#{Package\Cargar Producto temporal\Subdividir la segunda y tercera columna.Outputs[Derived Column Output].Columns[Magnitud]} == "cm3" ? #{Package\Cargar Producto temporal\Cambio de tipo.Outputs[Data Conversion Output].Columns[Copy of Cantidad]} / 1000 : #{Package\Cargar Producto temporal\Cambio de tipo.Outputs[Data Conversion Output].Columns[Copy of Cantidad]}),2)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">Magnitud == "cm3" ? [Copy of Cantidad] / 1000 : [Copy of Cantidad]</property>
+                          name="FriendlyExpression">ROUND((Magnitud == "cm3" ? [Copy of Cantidad] / 1000 : [Copy of Cantidad]),2)</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -4991,7 +4991,7 @@
     design-time-name="Package\Cargar Producto intermedio">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="99,42"
           Id="Package\Cargar Producto intermedio\Sort"
@@ -5003,7 +5003,7 @@
         <NodeLayout
           Size="173,42"
           Id="Package\Cargar Producto intermedio\int_Productos_G01"
-          TopLeft="218,241" />
+          TopLeft="189,241" />
         <NodeLayout
           Size="108,42"
           Id="Package\Cargar Producto intermedio\Sort 1"
@@ -5015,16 +5015,16 @@
         <NodeLayout
           Size="133,42"
           Id="Package\Cargar Producto intermedio\Merge Join"
-          TopLeft="233,174" />
+          TopLeft="204,174" />
         <EdgeLayout
           Id="Package\Cargar Producto intermedio.Paths[Sort Output1]"
           TopLeft="413,140">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-92.6666666666667,34"
+              EndConnector="-121.666666666667,34"
               Start="0,0"
-              End="-92.6666666666667,26.5">
+              End="-121.666666666667,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5035,21 +5035,19 @@
                     Point2="0,20.1575037147102"
                     Point3="-4,20.1575037147102" />
                   <mssgle:LineSegment
-                    End="-88.6666666666667,20.1575037147102" />
+                    End="-117.666666666667,20.1575037147102" />
                   <mssgle:CubicBezierSegment
-                    Point1="-88.6666666666667,20.1575037147102"
-                    Point2="-92.6666666666667,20.1575037147102"
-                    Point3="-92.6666666666667,24.1575037147102" />
+                    Point1="-117.666666666667,20.1575037147102"
+                    Point2="-121.666666666667,20.1575037147102"
+                    Point3="-121.666666666667,24.1575037147102" />
                   <mssgle:LineSegment
-                    End="-92.6666666666667,26.5" />
+                    End="-121.666666666667,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5058,9 +5056,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="147.166666666667,32"
+              EndConnector="118.166666666667,32"
               Start="0,0"
-              End="147.166666666667,24.5">
+              End="118.166666666667,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5071,21 +5069,19 @@
                     Point2="0,18.9717682020802"
                     Point3="4,18.9717682020802" />
                   <mssgle:LineSegment
-                    End="143.166666666667,18.9717682020802" />
+                    End="114.166666666667,18.9717682020802" />
                   <mssgle:CubicBezierSegment
-                    Point1="143.166666666667,18.9717682020802"
-                    Point2="147.166666666667,18.9717682020802"
-                    Point3="147.166666666667,22.9717682020802" />
+                    Point1="114.166666666667,18.9717682020802"
+                    Point2="118.166666666667,18.9717682020802"
+                    Point3="118.166666666667,22.9717682020802" />
                   <mssgle:LineSegment
-                    End="147.166666666667,24.5" />
+                    End="118.166666666667,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5107,9 +5103,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5131,14 +5125,12 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Cargar Producto intermedio.Paths[Merge Join Output]"
-          TopLeft="302,216">
+          TopLeft="273,216">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5155,9 +5147,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5208,33 +5198,77 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="123,42"
-          Id="Package\Cargar Producto temporal\Producto"
-          TopLeft="145,26" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Cargar Producto temporal\Data Conversion 1"
-          TopLeft="117,379" />
-        <NodeLayout
           Size="200,42"
           Id="Package\Cargar Producto temporal\Tipo de envase sin nulos"
           TopLeft="100,167" />
-        <NodeLayout
-          Size="274,42"
-          Id="Package\Cargar Producto temporal\Subdividir la segunda y tercera columna"
-          TopLeft="63.5,95.5" />
         <NodeLayout
           Size="159,42"
           Id="Package\Cargar Producto temporal\temp_Productos"
           TopLeft="120,446" />
         <NodeLayout
-          Size="153,42"
-          Id="Package\Cargar Producto temporal\Cambio de tipo"
-          TopLeft="121,240" />
+          Size="274,42"
+          Id="Package\Cargar Producto temporal\Subdividir la segunda y tercera columna"
+          TopLeft="63.5,95.5" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Cargar Producto temporal\Data Conversion 1"
+          TopLeft="117,379" />
         <NodeLayout
           Size="158,42"
           Id="Package\Cargar Producto temporal\Derived Column"
-          TopLeft="122,309" />
+          TopLeft="122,308" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Cargar Producto temporal\Producto"
+          TopLeft="145,26" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Cargar Producto temporal\Cambio de tipo"
+          TopLeft="121,240" />
+        <EdgeLayout
+          Id="Package\Cargar Producto temporal.Paths[OLE DB Source Output]"
+          TopLeft="203.5,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.5"
+              Start="0,0"
+              End="0,20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar Producto temporal.Paths[Derived Column Output2]"
+          TopLeft="201.5,350">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Cargar Producto temporal.Paths[Derived Column Output1]"
           TopLeft="198.75,209">
@@ -5307,58 +5341,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27"
+              EndConnector="0,26"
               Start="0,0"
-              End="0,19.5">
+              End="0,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cargar Producto temporal.Paths[OLE DB Source Output]"
-          TopLeft="203.5,68">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.5"
-              Start="0,0"
-              End="0,20">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cargar Producto temporal.Paths[Derived Column Output2]"
-          TopLeft="201.5,351">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

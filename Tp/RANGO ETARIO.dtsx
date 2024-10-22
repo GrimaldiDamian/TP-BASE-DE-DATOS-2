@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{EEEB94EA-5DC6-4A55-B83C-6B6C4A4F63B9}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{91AA7E50-0B7F-425D-A8C5-AC9C691AA434}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -42,7 +42,1835 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ASIGNAR INT RANGO ETARIO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{86C3D032-BA9C-45FA-B08D-1D70D6EE1E89}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ASIGNAR INT RANGO ETARIO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Dim_RangoEtario_G01"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_RangoEtario_G01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO_KEY]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO]"
+                      length="255"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MINIMA]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MAXIMA]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      name="RANGO_ETARIO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RANGO_ETARIO" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MINIMA]"
+                      dataType="i4"
+                      name="EDAD_MINIMA" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      name="EDAD_MAXIMA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="int_RangoEtario_G01"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[int_RangoEtario_G01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Intermedia]"
+                  connectionManagerRefId="Package.ConnectionManagers[Intermedia]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].Columns[RANGO_ETARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RANGO_ETARIO"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].ExternalColumns[RANGO_ETARIO]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[RANGO_ETARIO]" />
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].ExternalColumns[EDAD_MINIMA]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[EDAD_MINIMA]" />
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].Columns[EDAD_MAXIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MAXIMA"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].ExternalColumns[EDAD_MAXIMA]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[EDAD_MAXIMA]" />
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].Columns[RANGO_ETARIO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="RANGO_ETARIO_KEY"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].ExternalColumns[RANGO_ETARIO_KEY]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[RANGO_ETARIO_KEY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].ExternalColumns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      name="RANGO_ETARIO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].ExternalColumns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RANGO_ETARIO" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].ExternalColumns[EDAD_MINIMA]"
+                      dataType="i4"
+                      name="EDAD_MINIMA" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input].ExternalColumns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      name="EDAD_MAXIMA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Left Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[EDAD_MINIMA]" />
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Left Input].Columns[RANGO_ETARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RANGO_ETARIO"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[RANGO_ETARIO]" />
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Left Input].Columns[EDAD_MAXIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MAXIMA"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[EDAD_MAXIMA]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Right Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[EDAD_MINIMA]" />
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Right Input].Columns[RANGO_ETARIO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="RANGO_ETARIO_KEY"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[RANGO_ETARIO_KEY]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Left Input].Columns[RANGO_ETARIO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Left Input].Columns[EDAD_MINIMA]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Left Input].Columns[EDAD_MAXIMA]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Right Input].Columns[RANGO_ETARIO_KEY]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Rango_temp"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Rango_temp]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Intermedia]"
+                  connectionManagerRefId="Package.ConnectionManagers[Intermedia]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO_KEY]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO]"
+                      length="255"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MINIMA]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MAXIMA]"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      name="RANGO_ETARIO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RANGO_ETARIO" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MINIMA]"
+                      dataType="i4"
+                      name="EDAD_MINIMA" />
+                    <externalMetadataColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      name="EDAD_MAXIMA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ASIGNAR INT RANGO ETARIO\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Inputs[Sort Input].Columns[RANGO_ETARIO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="RANGO_ETARIO_KEY"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Inputs[Sort Input].Columns[RANGO_ETARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RANGO_ETARIO"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Inputs[Sort Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Inputs[Sort Input].Columns[EDAD_MAXIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MAXIMA"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Inputs[Sort Input].Columns[RANGO_ETARIO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="RANGO_ETARIO_KEY"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Inputs[Sort Input].Columns[RANGO_ETARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RANGO_ETARIO"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Inputs[Sort Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Inputs[Sort Input].Columns[EDAD_MAXIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MAXIMA"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      lineageId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ASIGNAR INT RANGO ETARIO.Paths[Merge Join Output]"
+              endId="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01.Inputs[OLE DB Destination Input]"
+              name="Merge Join Output"
+              startId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\ASIGNAR INT RANGO ETARIO.Paths[OLE DB Source Output]"
+              endId="Package\ASIGNAR INT RANGO ETARIO\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\ASIGNAR INT RANGO ETARIO\Rango_temp.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\ASIGNAR INT RANGO ETARIO.Paths[OLE DB Source Output1]"
+              endId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\ASIGNAR INT RANGO ETARIO.Paths[Sort Output]"
+              endId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\ASIGNAR INT RANGO ETARIO\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\ASIGNAR INT RANGO ETARIO.Paths[Sort Output1]"
+              endId="Package\ASIGNAR INT RANGO ETARIO\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\ASIGNAR INT RANGO ETARIO\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CARGAR DIM RANGO ETARIO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0436B8BD-6421-4629-91A2-3A938D65F03E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGAR DIM RANGO ETARIO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Dim_RangoEtario_G01"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [EDAD_MAXIMA], [EDAD_MINIMA], [RANGO_ETARIO] FROM [dbo].[Dim_RangoEtario_G01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].Columns[EDAD_MAXIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MAXIMA"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[EDAD_MAXIMA]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[EDAD_MINIMA]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].Columns[RANGO_ETARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RANGO_ETARIO"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[RANGO_ETARIO]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      name="EDAD_MAXIMA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[EDAD_MINIMA]"
+                      dataType="i4"
+                      name="EDAD_MINIMA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RANGO_ETARIO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insertar destino"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_RangoEtario_G01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].Columns[RANGO_ETARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RANGO_ETARIO"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[RANGO_ETARIO]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[EDAD_MINIMA]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].Columns[EDAD_MAXIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MAXIMA"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[EDAD_MAXIMA]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      name="RANGO_ETARIO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RANGO_ETARIO" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[EDAD_MINIMA]"
+                      dataType="i4"
+                      name="EDAD_MINIMA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      name="EDAD_MAXIMA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="int_RangoEtario_G01"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[int_RangoEtario_G01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Intermedia]"
+                  connectionManagerRefId="Package.ConnectionManagers[Intermedia]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO_KEY]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO]"
+                      length="255"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MINIMA]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MAXIMA]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      name="RANGO_ETARIO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RANGO_ETARIO" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MINIMA]"
+                      dataType="i4"
+                      name="EDAD_MINIMA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].ExternalColumns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      name="EDAD_MAXIMA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO_KEY]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO_KEY]"
+                      name="RANGO_ETARIO_KEY" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[RANGO_ETARIO]"
+                      name="RANGO_ETARIO" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[EDAD_MINIMA]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[EDAD_MINIMA]"
+                      name="EDAD_MINIMA" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[EDAD_MAXIMA]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[EDAD_MAXIMA]"
+                      name="EDAD_MAXIMA" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_RangoEtario_G01] SET [EDAD_MAXIMA] = ?,[EDAD_MINIMA] = ? WHERE [RANGO_ETARIO] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].Columns[EDAD_MAXIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MAXIMA"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].Columns[RANGO_ETARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RANGO_ETARIO"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_RangoEtario_G01] SET [EDAD_MAXIMA] = ?,[EDAD_MINIMA] = ? WHERE [RANGO_ETARIO] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[EDAD_MAXIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MAXIMA"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[EDAD_MINIMA]"
+                      cachedDataType="i4"
+                      cachedName="EDAD_MINIMA"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[RANGO_ETARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RANGO_ETARIO"
+                      externalMetadataColumnId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CARGAR DIM RANGO ETARIO.Paths[Changing Attribute Updates Output]"
+              endId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\CARGAR DIM RANGO ETARIO.Paths[Inferred Member Updates Output]"
+              endId="Package\CARGAR DIM RANGO ETARIO\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Inferred Member Updates Output"
+              startId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[Inferred Member Updates Output]" />
+            <path
+              refId="Package\CARGAR DIM RANGO ETARIO.Paths[New Output]"
+              endId="Package\CARGAR DIM RANGO ETARIO\Insertar destino.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Outputs[New Output]" />
+            <path
+              refId="Package\CARGAR DIM RANGO ETARIO.Paths[OLE DB Source Output]"
+              endId="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CARGAR VALORES"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{7EE32CA9-ADD3-4F56-9463-D4A4B1D51DEB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGAR VALORES"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EFF1417E-81D7-4BC9-9187-06EFFDD5F0B8}"
+          SQLTask:SqlStatementSource="INSERT INTO Rango_temp(RANGO_ETARIO_KEY,RANGO_ETARIO,EDAD_MINIMA, EDAD_MAXIMA)&#xA;VALUES&#xA;    (NULL,'Teenagers',13,19),&#xA;&#x9;(NULL,'Adulto joven',20,29),&#xA;&#x9;(NULL,'Adultos',30,39),&#xA;    (NULL,'Adultos medios',40,50),&#xA;&#x9;(NULL,'Adultos mayores',51,65),&#xA;    (NULL,'Consumidores seniores',66,75),&#xA;&#x9;(NULL,'Mayores de 75',76,100);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE TABLE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{6098189F-9FC3-41D7-8C58-6C77711FD734}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE TABLE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EFF1417E-81D7-4BC9-9187-06EFFDD5F0B8}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE Rango_temp;&#xA;TRUNCATE TABLE int_RangoEtario_G01" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{A3F104CA-F756-45B5-B713-0D5AA984A8BE}"
+      DTS:From="Package\TRUNCATE TABLE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\CARGAR VALORES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{58E8403B-AD10-44C4-A00D-7EA62360166C}"
+      DTS:From="Package\CARGAR VALORES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\ASIGNAR INT RANGO ETARIO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{949634E1-09F3-46D7-B492-84562247994F}"
+      DTS:From="Package\ASIGNAR INT RANGO ETARIO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\CARGAR DIM RANGO ETARIO" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
 <!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
@@ -50,5 +1878,509 @@
 <Objects
   Version="8">
   <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236,42"
+          Id="Package\ASIGNAR INT RANGO ETARIO"
+          TopLeft="334,195" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\TRUNCATE TABLE"
+          TopLeft="363,58" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\CARGAR VALORES"
+          TopLeft="362,128" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="452,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="452.25,170">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="236,42"
+          Id="Package\CARGAR DIM RANGO ETARIO"
+          TopLeft="333,269" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="451.5,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ASIGNAR INT RANGO ETARIO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142,42"
+          Id="Package\ASIGNAR INT RANGO ETARIO\Rango_temp"
+          TopLeft="336,44" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01"
+          TopLeft="547,48" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\ASIGNAR INT RANGO ETARIO\Sort"
+          TopLeft="364,117" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\ASIGNAR INT RANGO ETARIO\Sort 1"
+          TopLeft="586,118" />
+        <EdgeLayout
+          Id="Package\ASIGNAR INT RANGO ETARIO.Paths[OLE DB Source Output]"
+          TopLeft="410.25,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ASIGNAR INT RANGO ETARIO.Paths[OLE DB Source Output1]"
+          TopLeft="641.75,90">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133,42"
+          Id="Package\ASIGNAR INT RANGO ETARIO\Merge Join"
+          TopLeft="454,203" />
+        <EdgeLayout
+          Id="Package\ASIGNAR INT RANGO ETARIO.Paths[Sort Output]"
+          TopLeft="413.5,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.1666666666667,44"
+              Start="0,0"
+              End="86.1666666666667,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0861812778603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.0861812778603"
+                    Point2="0,26.0861812778603"
+                    Point3="4,26.0861812778603" />
+                  <mssgle:LineSegment
+                    End="82.1666666666667,26.0861812778603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.1666666666667,26.0861812778603"
+                    Point2="86.1666666666667,26.0861812778603"
+                    Point3="86.1666666666667,30.0861812778603" />
+                  <mssgle:LineSegment
+                    End="86.1666666666667,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ASIGNAR INT RANGO ETARIO.Paths[Sort Output1]"
+          TopLeft="640,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.6666666666666,43"
+              Start="0,0"
+              End="-98.6666666666666,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4933135215453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.4933135215453"
+                    Point2="0,25.4933135215453"
+                    Point3="-4,25.4933135215453" />
+                  <mssgle:LineSegment
+                    End="-94.6666666666666,25.4933135215453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.6666666666666,25.4933135215453"
+                    Point2="-98.6666666666666,25.4933135215453"
+                    Point3="-98.6666666666666,29.4933135215453" />
+                  <mssgle:LineSegment
+                    End="-98.6666666666666,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="185,42"
+          Id="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01"
+          TopLeft="431,272" />
+        <EdgeLayout
+          Id="Package\ASIGNAR INT RANGO ETARIO.Paths[Merge Join Output]"
+          TopLeft="522,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ASIGNAR INT RANGO ETARIO\Rango_temp">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ASIGNAR INT RANGO ETARIO\Dim_RangoEtario_G01">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ASIGNAR INT RANGO ETARIO\int_RangoEtario_G01">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARGAR DIM RANGO ETARIO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01"
+          TopLeft="215.5,5.49999999999989" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01"
+          TopLeft="211.5,107.5" />
+        <EdgeLayout
+          Id="Package\CARGAR DIM RANGO ETARIO.Paths[OLE DB Source Output]"
+          TopLeft="308,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\CARGAR DIM RANGO ETARIO\Insertar destino"
+          TopLeft="5.50000000000006,209.5" />
+        <EdgeLayout
+          Id="Package\CARGAR DIM RANGO ETARIO.Paths[New Output]"
+          TopLeft="261.75,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178.75,60"
+              Start="0,0"
+              End="-178.75,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5451448040886" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5451448040886"
+                    Point2="0,20.5451448040886"
+                    Point3="-4,20.5451448040886" />
+                  <mssgle:LineSegment
+                    End="-174.75,20.5451448040886" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-174.75,20.5451448040886"
+                    Point2="-178.75,20.5451448040886"
+                    Point3="-178.75,24.5451448040886" />
+                  <mssgle:LineSegment
+                    End="-178.75,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-116.46638671875,25.5451448040886,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\CARGAR DIM RANGO ETARIO\OLE DB Command"
+          TopLeft="221.5,209.5" />
+        <EdgeLayout
+          Id="Package\CARGAR DIM RANGO ETARIO.Paths[Inferred Member Updates Output]"
+          TopLeft="308,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.40298828125,20.4208984375,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182,42"
+          Id="Package\CARGAR DIM RANGO ETARIO\OLE DB Command 1"
+          TopLeft="455,209.5" />
+        <EdgeLayout
+          Id="Package\CARGAR DIM RANGO ETARIO.Paths[Changing Attribute Updates Output]"
+          TopLeft="354.25,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="191.75,60"
+              Start="0,0"
+              End="191.75,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5451448040886" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5451448040886"
+                    Point2="0,20.5451448040886"
+                    Point3="4,20.5451448040886" />
+                  <mssgle:LineSegment
+                    End="187.75,20.5451448040886" />
+                  <mssgle:CubicBezierSegment
+                    Point1="187.75,20.5451448040886"
+                    Point2="191.75,20.5451448040886"
+                    Point3="191.75,24.5451448040886" />
+                  <mssgle:LineSegment
+                    End="191.75,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="17.34109375,25.5451448040886,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGAR DIM RANGO ETARIO\int_RangoEtario_G01">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGAR DIM RANGO ETARIO\Dim_RangoEtario_G01">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{9F9002C0-C5C4-477A-A1AC-ABE4B6F22664}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_RangoEtario_G01]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MAXIMA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;EDAD_MAXIMA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[EDAD_MINIMA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;EDAD_MINIMA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_RangoEtario_G01.Outputs[OLE DB Source Output].Columns[RANGO_ETARIO]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;RANGO_ETARIO&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insertar destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

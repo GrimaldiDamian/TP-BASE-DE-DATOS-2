@@ -11,12 +11,1249 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="TIEMPO"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{7FBB2BDD-07BF-4392-9C3C-01BE204253C3}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{D0A3B812-2A2C-495F-8720-4AFF2E1C4417}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[datawarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{14BA8428-C3DC-43F7-B086-F7FB1C2A93E8}"
+      DTS:ObjectName="datawarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=datawarehouse_2024_G01;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[intermedia]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{49313E06-086D-4483-83AD-A00672812811}"
+      DTS:ObjectName="intermedia">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=bd_intermedia_2024_G01;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGAR DIM TIEMPO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D9EE9FC8-E8DD-4D33-A3DB-B4166FE21174}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGAR DIM TIEMPO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Dim_Tiempo_G01"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [AÑO], [BIMESTRE], [DÍA], [DIA_DE_SEMANA], [FECHA], [MES], [TIEMPO_KEY], [TRIMESTRE] FROM [dbo].[Dim_Tiempo_G01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].Columns[AÑO]"
+                      cachedDataType="i4"
+                      cachedName="AÑO"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[AÑO]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[AÑO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].Columns[BIMESTRE]"
+                      cachedDataType="i4"
+                      cachedName="BIMESTRE"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[BIMESTRE]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[BIMESTRE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].Columns[DÍA]"
+                      cachedDataType="i4"
+                      cachedName="DÍA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[DÍA]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DÍA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].Columns[DIA_DE_SEMANA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DIA_DE_SEMANA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[DIA_DE_SEMANA]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DIA_DE_SEMANA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].Columns[FECHA]"
+                      cachedDataType="dbDate"
+                      cachedName="FECHA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[FECHA]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[FECHA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].Columns[MES]"
+                      cachedDataType="i4"
+                      cachedName="MES"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[MES]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[MES]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].Columns[TIEMPO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="TIEMPO_KEY"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[TIEMPO_KEY]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TIEMPO_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].Columns[TRIMESTRE]"
+                      cachedDataType="i4"
+                      cachedName="TRIMESTRE"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[TRIMESTRE]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TRIMESTRE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[AÑO]"
+                      dataType="i4"
+                      name="AÑO" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[BIMESTRE]"
+                      dataType="i4"
+                      name="BIMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[DÍA]"
+                      dataType="i4"
+                      name="DÍA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[DIA_DE_SEMANA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DIA_DE_SEMANA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[FECHA]"
+                      dataType="dbDate"
+                      name="FECHA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[MES]"
+                      dataType="i4"
+                      name="MES" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[TIEMPO_KEY]"
+                      dataType="i4"
+                      name="TIEMPO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[TRIMESTRE]"
+                      dataType="i4"
+                      name="TRIMESTRE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGAR DIM TIEMPO\Insertar destino"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insertar destino"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Tiempo_G01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM TIEMPO\Insertar destino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].Columns[TIEMPO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="TIEMPO_KEY"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[TIEMPO_KEY]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TIEMPO_KEY]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].Columns[AÑO]"
+                      cachedDataType="i4"
+                      cachedName="AÑO"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[AÑO]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[AÑO]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].Columns[MES]"
+                      cachedDataType="i4"
+                      cachedName="MES"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[MES]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[MES]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].Columns[DÍA]"
+                      cachedDataType="i4"
+                      cachedName="DÍA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[DÍA]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DÍA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].Columns[BIMESTRE]"
+                      cachedDataType="i4"
+                      cachedName="BIMESTRE"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[BIMESTRE]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[BIMESTRE]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].Columns[TRIMESTRE]"
+                      cachedDataType="i4"
+                      cachedName="TRIMESTRE"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[TRIMESTRE]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TRIMESTRE]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].Columns[DIA_DE_SEMANA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DIA_DE_SEMANA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[DIA_DE_SEMANA]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DIA_DE_SEMANA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].Columns[FECHA]"
+                      cachedDataType="dbDate"
+                      cachedName="FECHA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[FECHA]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[FECHA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[TIEMPO_KEY]"
+                      dataType="i4"
+                      name="TIEMPO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[AÑO]"
+                      dataType="i4"
+                      name="AÑO" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[MES]"
+                      dataType="i4"
+                      name="MES" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[DÍA]"
+                      dataType="i4"
+                      name="DÍA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[BIMESTRE]"
+                      dataType="i4"
+                      name="BIMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[TRIMESTRE]"
+                      dataType="i4"
+                      name="TRIMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[DIA_DE_SEMANA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DIA_DE_SEMANA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[FECHA]"
+                      dataType="dbDate"
+                      name="FECHA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\Insertar destino.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="int_Tiempo_G01"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[int_Tiempo_G01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[intermedia]"
+                  connectionManagerRefId="Package.ConnectionManagers[intermedia]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TIEMPO_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[TIEMPO_KEY]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TIEMPO_KEY]"
+                      name="TIEMPO_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[AÑO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[AÑO]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[AÑO]"
+                      name="AÑO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[MES]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[MES]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[MES]"
+                      name="MES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DÍA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[DÍA]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DÍA]"
+                      name="DÍA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[BIMESTRE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[BIMESTRE]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[BIMESTRE]"
+                      name="BIMESTRE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TRIMESTRE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[TRIMESTRE]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TRIMESTRE]"
+                      name="TRIMESTRE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DIA_DE_SEMANA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[DIA_DE_SEMANA]"
+                      length="255"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DIA_DE_SEMANA]"
+                      name="DIA_DE_SEMANA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[FECHA]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[FECHA]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[FECHA]"
+                      name="FECHA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[TIEMPO_KEY]"
+                      dataType="i4"
+                      name="TIEMPO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[AÑO]"
+                      dataType="i4"
+                      name="AÑO" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[MES]"
+                      dataType="i4"
+                      name="MES" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[DÍA]"
+                      dataType="i4"
+                      name="DÍA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[BIMESTRE]"
+                      dataType="i4"
+                      name="BIMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[TRIMESTRE]"
+                      dataType="i4"
+                      name="TRIMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[DIA_DE_SEMANA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DIA_DE_SEMANA" />
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].ExternalColumns[FECHA]"
+                      dataType="dbDate"
+                      name="FECHA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[TIEMPO_KEY]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[TIEMPO_KEY]"
+                      name="TIEMPO_KEY" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[AÑO]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[AÑO]"
+                      name="AÑO" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[MES]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[MES]"
+                      name="MES" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[DÍA]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[DÍA]"
+                      name="DÍA" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[BIMESTRE]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[BIMESTRE]"
+                      name="BIMESTRE" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[TRIMESTRE]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[TRIMESTRE]"
+                      name="TRIMESTRE" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[DIA_DE_SEMANA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[DIA_DE_SEMANA]"
+                      name="DIA_DE_SEMANA" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[FECHA]"
+                      dataType="dbDate"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[FECHA]"
+                      name="FECHA" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGAR DIM TIEMPO\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Tiempo_G01] SET [AÑO] = ?,[BIMESTRE] = ?,[DÍA] = ?,[DIA_DE_SEMANA] = ?,[FECHA] = ?,[MES] = ?,[TRIMESTRE] = ? WHERE [TIEMPO_KEY] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].Columns[AÑO]"
+                      cachedDataType="i4"
+                      cachedName="AÑO"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[AÑO]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].Columns[BIMESTRE]"
+                      cachedDataType="i4"
+                      cachedName="BIMESTRE"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[BIMESTRE]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].Columns[DÍA]"
+                      cachedDataType="i4"
+                      cachedName="DÍA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DÍA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].Columns[DIA_DE_SEMANA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DIA_DE_SEMANA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DIA_DE_SEMANA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].Columns[FECHA]"
+                      cachedDataType="dbDate"
+                      cachedName="FECHA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[FECHA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].Columns[MES]"
+                      cachedDataType="i4"
+                      cachedName="MES"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[MES]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].Columns[TIEMPO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="TIEMPO_KEY"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TIEMPO_KEY]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].Columns[TRIMESTRE]"
+                      cachedDataType="i4"
+                      cachedName="TRIMESTRE"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TRIMESTRE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="dbDate"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Tiempo_G01] SET [AÑO] = ?,[BIMESTRE] = ?,[DÍA] = ?,[DIA_DE_SEMANA] = ?,[FECHA] = ?,[MES] = ?,[TRIMESTRE] = ? WHERE [TIEMPO_KEY] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AÑO]"
+                      cachedDataType="i4"
+                      cachedName="AÑO"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[AÑO]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[BIMESTRE]"
+                      cachedDataType="i4"
+                      cachedName="BIMESTRE"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[BIMESTRE]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DÍA]"
+                      cachedDataType="i4"
+                      cachedName="DÍA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DÍA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DIA_DE_SEMANA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DIA_DE_SEMANA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DIA_DE_SEMANA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FECHA]"
+                      cachedDataType="dbDate"
+                      cachedName="FECHA"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[FECHA]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[MES]"
+                      cachedDataType="i4"
+                      cachedName="MES"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[MES]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TIEMPO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="TIEMPO_KEY"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TIEMPO_KEY]" />
+                    <inputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TRIMESTRE]"
+                      cachedDataType="i4"
+                      cachedName="TRIMESTRE"
+                      externalMetadataColumnId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TRIMESTRE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="dbDate"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CARGAR DIM TIEMPO.Paths[Changing Attribute Updates Output]"
+              endId="Package\CARGAR DIM TIEMPO\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\CARGAR DIM TIEMPO.Paths[Inferred Member Updates Output]"
+              endId="Package\CARGAR DIM TIEMPO\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Inferred Member Updates Output"
+              startId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[Inferred Member Updates Output]" />
+            <path
+              refId="Package\CARGAR DIM TIEMPO.Paths[New Output]"
+              endId="Package\CARGAR DIM TIEMPO\Insertar destino.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Outputs[New Output]" />
+            <path
+              refId="Package\CARGAR DIM TIEMPO.Paths[OLE DB Source Output]"
+              endId="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\CARGAR DIM TIEMPO\int_Tiempo_G01.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CARGAR INT TIEMPO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{6A9605EC-BF5F-4A9E-847A-E48552D9F90C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGAR INT TIEMPO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{49313E06-086D-4483-83AD-A00672812811}"
+          SQLTask:SqlStatementSource="DECLARE @fecha DATE = '2006-01-01';&#xA;DECLARE @fecha_actual DATE = CAST(GETDATE() AS DATE);&#xA;&#xA;WHILE @fecha &lt;= @fecha_actual&#xA;BEGIN&#xA;    INSERT INTO int_Tiempo_G01 (TIEMPO_KEY, AÑO, MES, DÍA, BIMESTRE, TRIMESTRE, DIA_DE_SEMANA, FECHA)&#xA;    VALUES (&#xA;        CONVERT(INT, FORMAT(@fecha, 'yyyyMMdd')),&#xA;        YEAR(@fecha),&#xA;        MONTH(@fecha),&#xA;        DAY(@fecha),&#xA;        (MONTH(@fecha) + 1) / 2,&#xA;        (MONTH(@fecha) + 2) / 3,&#xA;        DATENAME(WEEKDAY, @fecha),&#xA;        @fecha&#xA;    );&#xA;    SET @fecha = DATEADD(DAY, 1, @fecha);&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCARTE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{C45445DD-8B8D-40A9-B147-F40AB18F58B9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCARTE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{49313E06-086D-4483-83AD-A00672812811}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE int_Tiempo_G01" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB3F3514-6613-40E7-94C7-39095A1A1F72}"
+      DTS:From="Package\TRUNCARTE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\CARGAR INT TIEMPO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{437170EA-7411-4643-A942-DF94E3F6CACF}"
+      DTS:From="Package\CARGAR INT TIEMPO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\CARGAR DIM TIEMPO" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
 <!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
@@ -24,5 +1261,308 @@
 <Objects
   Version="8">
   <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\TRUNCARTE"
+          TopLeft="410,47" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\CARGAR INT TIEMPO"
+          TopLeft="390,118" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="484.75,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194,42"
+          Id="Package\CARGAR DIM TIEMPO"
+          TopLeft="386,190" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="484.5,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARGAR DIM TIEMPO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\CARGAR DIM TIEMPO\int_Tiempo_G01"
+          TopLeft="228,5.49999999999989" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01"
+          TopLeft="224,107.5" />
+        <EdgeLayout
+          Id="Package\CARGAR DIM TIEMPO.Paths[OLE DB Source Output]"
+          TopLeft="308,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\CARGAR DIM TIEMPO\Insertar destino"
+          TopLeft="5.50000000000006,209.5" />
+        <EdgeLayout
+          Id="Package\CARGAR DIM TIEMPO.Paths[New Output]"
+          TopLeft="268,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-185,60"
+              Start="0,0"
+              End="-185,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.625"
+                    Point2="0,20.625"
+                    Point3="-4,20.625" />
+                  <mssgle:LineSegment
+                    End="-181,20.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-181,20.625"
+                    Point2="-185,20.625"
+                    Point3="-185,24.625" />
+                  <mssgle:LineSegment
+                    End="-185,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-119.59138671875,25.625,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\CARGAR DIM TIEMPO\OLE DB Command"
+          TopLeft="221.5,209.5" />
+        <EdgeLayout
+          Id="Package\CARGAR DIM TIEMPO.Paths[Inferred Member Updates Output]"
+          TopLeft="308,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.40298828125,20.4208984375,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182,42"
+          Id="Package\CARGAR DIM TIEMPO\OLE DB Command 1"
+          TopLeft="455,209.5" />
+        <EdgeLayout
+          Id="Package\CARGAR DIM TIEMPO.Paths[Changing Attribute Updates Output]"
+          TopLeft="348,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="198,60"
+              Start="0,0"
+              End="198,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.625"
+                    Point2="0,20.625"
+                    Point3="4,20.625" />
+                  <mssgle:LineSegment
+                    End="194,20.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="194,20.625"
+                    Point2="198,20.625"
+                    Point3="198,24.625" />
+                  <mssgle:LineSegment
+                    End="198,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="20.46609375,25.625,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGAR DIM TIEMPO\int_Tiempo_G01">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGAR DIM TIEMPO\Dim_Tiempo_G01">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{14BA8428-C3DC-43F7-B086-F7FB1C2A93E8}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_Tiempo_G01]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[AÑO]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AÑO&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[BIMESTRE]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;BIMESTRE&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DÍA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;DÍA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[DIA_DE_SEMANA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;DIA_DE_SEMANA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[FECHA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FECHA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[MES]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;MES&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TIEMPO_KEY]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TIEMPO_KEY&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;int_Tiempo_G01.Outputs[OLE DB Source Output].Columns[TRIMESTRE]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TRIMESTRE&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insertar destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
