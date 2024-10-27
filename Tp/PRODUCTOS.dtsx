@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="150"
-  DTS:VersionGUID="{86F5F859-E35E-4A96-ABE5-13DC8800459C}">
+  DTS:VersionBuild="156"
+  DTS:VersionGUID="{99CCB6F9-BF53-4199-9DB6-81FE2C1D9EB8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -942,9 +942,7 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Cargar Dim Producto\Insertar destino.Inputs[OLE DB Destination Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       externalMetadataColumnId="Package\Cargar Dim Producto\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
                       lineageId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]" />
@@ -995,9 +993,7 @@
                       name="PRODUCTO_KEY" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Producto\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Product_ID" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Producto\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
@@ -1118,12 +1114,10 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
-                      length="255"
                       lineageId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]"
                       name="Product_ID"
                       truncationRowDisposition="FailComponent" />
@@ -1194,9 +1188,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Product_ID" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].ExternalColumns[Description]"
@@ -1251,9 +1243,7 @@
                       specialFlags="2" />
                     <outputColumn
                       refId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       lineageId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
                       name="Product_ID" />
                     <outputColumn
@@ -1371,9 +1361,7 @@
                       lineageId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].Columns[Magnitud]" />
                     <inputColumn
                       refId="Package\Cargar Dim Producto\OLE DB Command.Inputs[OLE DB Command Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       externalMetadataColumnId="Package\Cargar Dim Producto\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]" />
@@ -1453,15 +1441,13 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Producto\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Param_5">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -1571,9 +1557,7 @@
                       lineageId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].Columns[Magnitud]" />
                     <inputColumn
                       refId="Package\Cargar Dim Producto\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       externalMetadataColumnId="Package\Cargar Dim Producto\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]" />
@@ -1653,15 +1637,13 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Producto\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Param_5">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -1819,9 +1801,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Cargar Dim Producto\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       externalMetadataColumnId="Package\Cargar Dim Producto\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Product_ID]"
                       lineageId="Package\Cargar Dim Producto\int_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]">
@@ -1874,9 +1854,7 @@
                       name="Magnitud" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Producto\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Product_ID" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Producto\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Rubro]"
@@ -2050,12 +2028,10 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Cargar Producto intermedio\dim_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Cargar Producto intermedio\dim_Productos_G01.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
-                      length="255"
                       lineageId="Package\Cargar Producto intermedio\dim_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]"
                       name="Product_ID"
                       truncationRowDisposition="FailComponent" />
@@ -2121,9 +2097,7 @@
                       name="PRODUCTO_KEY" />
                     <externalMetadataColumn
                       refId="Package\Cargar Producto intermedio\dim_Productos_G01.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Product_ID" />
                     <externalMetadataColumn
                       refId="Package\Cargar Producto intermedio\dim_Productos_G01.Outputs[OLE DB Source Output].ExternalColumns[Description]"
@@ -2167,9 +2141,7 @@
                       name="PRODUCTO_KEY" />
                     <outputColumn
                       refId="Package\Cargar Producto intermedio\dim_Productos_G01.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       lineageId="Package\Cargar Producto intermedio\dim_Productos_G01.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
                       name="Product_ID" />
                     <outputColumn
@@ -2296,9 +2268,7 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Cargar Producto intermedio\int_Productos_G01.Inputs[OLE DB Destination Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Cargar Producto intermedio\int_Productos_G01.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
@@ -2352,9 +2322,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Cargar Producto intermedio\int_Productos_G01.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Product_ID" />
                     <externalMetadataColumn
                       refId="Package\Cargar Producto intermedio\int_Productos_G01.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
@@ -2450,9 +2418,7 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Cargar Producto intermedio\Merge Join.Inputs[Merge Join Left Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Cargar Producto intermedio\Sort.Outputs[Sort Output].Columns[Product_ID]" />
@@ -2499,9 +2465,7 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Cargar Producto intermedio\Merge Join.Inputs[Merge Join Right Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Cargar Producto intermedio\Sort 1.Outputs[Sort Output].Columns[Product_ID]" />
@@ -2535,9 +2499,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Cargar Producto intermedio\Merge Join.Outputs[Merge Join Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       lineageId="Package\Cargar Producto intermedio\Merge Join.Outputs[Merge Join Output].Columns[Product_ID]"
                       name="Product_ID"
                       sortKeyPosition="1">
@@ -2668,9 +2630,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Cargar Producto intermedio\Sort.Inputs[Sort Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       lineageId="Package\Cargar Producto intermedio\temp_Producto.Outputs[OLE DB Source Output].Columns[Product_ID]">
                       <properties>
@@ -2797,9 +2757,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Cargar Producto intermedio\Sort.Outputs[Sort Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       lineageId="Package\Cargar Producto intermedio\Sort.Outputs[Sort Output].Columns[Product_ID]"
                       name="Product_ID"
                       sortKeyPosition="1">
@@ -2930,9 +2888,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Cargar Producto intermedio\Sort 1.Inputs[Sort Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Product_ID"
                       lineageId="Package\Cargar Producto intermedio\dim_Productos_G01.Outputs[OLE DB Source Output].Columns[Product_ID]">
                       <properties>
@@ -3059,9 +3015,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Cargar Producto intermedio\Sort 1.Outputs[Sort Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       lineageId="Package\Cargar Producto intermedio\Sort 1.Outputs[Sort Output].Columns[Product_ID]"
                       name="Product_ID"
                       sortKeyPosition="1">
@@ -3223,12 +3177,10 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Cargar Producto intermedio\temp_Producto.Outputs[OLE DB Source Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Cargar Producto intermedio\temp_Producto.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
-                      length="255"
                       lineageId="Package\Cargar Producto intermedio\temp_Producto.Outputs[OLE DB Source Output].Columns[Product_ID]"
                       name="Product_ID"
                       truncationRowDisposition="FailComponent" />
@@ -3294,9 +3246,7 @@
                       name="PRODUCTO_KEY" />
                     <externalMetadataColumn
                       refId="Package\Cargar Producto intermedio\temp_Producto.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Product_ID" />
                     <externalMetadataColumn
                       refId="Package\Cargar Producto intermedio\temp_Producto.Outputs[OLE DB Source Output].ExternalColumns[Description]"
@@ -3340,9 +3290,7 @@
                       name="PRODUCTO_KEY" />
                     <outputColumn
                       refId="Package\Cargar Producto intermedio\temp_Producto.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       lineageId="Package\Cargar Producto intermedio\temp_Producto.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
                       name="Product_ID" />
                     <outputColumn
@@ -3647,11 +3595,6 @@
                       cachedLength="255"
                       cachedName="Magnitud_litros"
                       lineageId="Package\Cargar Producto temporal\Derived Column.Outputs[Derived Column Output].Columns[Magnitud_litros]" />
-                    <inputColumn
-                      refId="Package\Cargar Producto temporal\Data Conversion 1.Inputs[Data Conversion Input].Columns[Copy of Product_ID]"
-                      cachedDataType="i1"
-                      cachedName="Copy of Product_ID"
-                      lineageId="Package\Cargar Producto temporal\Cambio de tipo.Outputs[Data Conversion Output].Columns[Copy of Product_ID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3679,28 +3622,6 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Cargar Producto temporal\Derived Column.Outputs[Derived Column Output].Columns[Magnitud_litros]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cargar Producto temporal\Data Conversion 1.Outputs[Data Conversion Output].Columns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Cargar Producto temporal\Data Conversion 1.Outputs[Data Conversion Output].Columns[Product_ID]"
-                      name="Product_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Cargar Producto temporal\Cambio de tipo.Outputs[Data Conversion Output].Columns[Copy of Product_ID]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -4277,13 +4198,11 @@
                       externalMetadataColumnId="Package\Cargar Producto temporal\temp_Productos.Inputs[OLE DB Destination Input].ExternalColumns[Rubro]"
                       lineageId="Package\Cargar Producto temporal\Cambio de tipo.Outputs[Data Conversion Output].Columns[Copy of Rubro]" />
                     <inputColumn
-                      refId="Package\Cargar Producto temporal\temp_Productos.Inputs[OLE DB Destination Input].Columns[Product_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Product_ID"
+                      refId="Package\Cargar Producto temporal\temp_Productos.Inputs[OLE DB Destination Input].Columns[Copy of Product_ID]"
+                      cachedDataType="i1"
+                      cachedName="Copy of Product_ID"
                       externalMetadataColumnId="Package\Cargar Producto temporal\temp_Productos.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
-                      lineageId="Package\Cargar Producto temporal\Data Conversion 1.Outputs[Data Conversion Output].Columns[Product_ID]" />
+                      lineageId="Package\Cargar Producto temporal\Cambio de tipo.Outputs[Data Conversion Output].Columns[Copy of Product_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4305,9 +4224,7 @@
                       name="Cantidad" />
                     <externalMetadataColumn
                       refId="Package\Cargar Producto temporal\temp_Productos.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Product_ID" />
                     <externalMetadataColumn
                       refId="Package\Cargar Producto temporal\temp_Productos.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
@@ -4668,7 +4585,7 @@
     design-time-name="Package\Carga TXT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="107,42"
           Id="Package\Carga TXT\Stock"
@@ -4704,7 +4621,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4726,7 +4645,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4766,83 +4687,37 @@
         <NodeLayout
           Size="173,42"
           Id="Package\Cargar Dim Producto\int_Productos_G01"
-          TopLeft="222.5,36.5" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Cargar Dim Producto\OLE DB Command 1"
-          TopLeft="455,209.5" />
+          TopLeft="221.5,5.49999999999989" />
         <NodeLayout
           Size="216,42"
           Id="Package\Cargar Dim Producto\Slowly Changing Dimension"
           TopLeft="200,107.5" />
+        <EdgeLayout
+          Id="Package\Cargar Dim Producto.Paths[OLE DB Source Output]"
+          TopLeft="308,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
           Size="155,42"
           Id="Package\Cargar Dim Producto\Insertar destino"
-          TopLeft="5.5,209.5" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Cargar Dim Producto\OLE DB Command"
-          TopLeft="221.5,209.5" />
-        <EdgeLayout
-          Id="Package\Cargar Dim Producto.Paths[Changing Attribute Updates Output]"
-          TopLeft="360,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="186,59.9999999999999"
-              Start="0,0"
-              End="186,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4878048780487" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4878048780487"
-                    Point2="0,20.4878048780487"
-                    Point3="4,20.4878048780487" />
-                  <mssgle:LineSegment
-                    End="182,20.4878048780487" />
-                  <mssgle:CubicBezierSegment
-                    Point1="182,20.4878048780487"
-                    Point2="186,20.4878048780487"
-                    Point3="186,24.4878048780487" />
-                  <mssgle:LineSegment
-                    End="186,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="14.4660937499999,25.4878048780487,157.0678125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cargar Dim Producto.Paths[OLE DB Source Output]"
-          TopLeft="308.5,78.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29"
-              Start="0,0"
-              End="0,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
           Id="Package\Cargar Dim Producto.Paths[New Output]"
           TopLeft="256,149.5">
@@ -4879,6 +4754,10 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Cargar Dim Producto\OLE DB Command"
+          TopLeft="221.5,209.5" />
         <EdgeLayout
           Id="Package\Cargar Dim Producto.Paths[Inferred Member Updates Output]"
           TopLeft="308,149.5">
@@ -4900,6 +4779,46 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-74.40298828125,20.4208984375,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Cargar Dim Producto\OLE DB Command 1"
+          TopLeft="455,209.5" />
+        <EdgeLayout
+          Id="Package\Cargar Dim Producto.Paths[Changing Attribute Updates Output]"
+          TopLeft="360,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="186,60"
+              Start="0,0"
+              End="186,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4878048780488" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4878048780488"
+                    Point2="0,20.4878048780488"
+                    Point3="4,20.4878048780488" />
+                  <mssgle:LineSegment
+                    End="182,20.4878048780488" />
+                  <mssgle:CubicBezierSegment
+                    Point1="182,20.4878048780488"
+                    Point2="186,20.4878048780488"
+                    Point3="186,24.4878048780488" />
+                  <mssgle:LineSegment
+                    End="186,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="14.46609375,25.4878048780488,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
