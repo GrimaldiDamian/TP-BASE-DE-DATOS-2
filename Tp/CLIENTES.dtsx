@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Cargar CLIENTE"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{CA585F3B-4535-4182-9838-5662E1CC6767}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{F45BF99A-F16E-40DD-B0CF-CB40D66ACF47}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -69,7 +69,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{7BCECFCB-2941-47F2-9E12-C966B7F3E6B4}"
-          SQLTask:SqlStatementSource="UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '04/05/1943'&#xA;WHERE BIRTH_DATE = '44/45/1943';&#xA;&#xA;UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '11/03/1968'&#xA;WHERE BIRTH_DATE = '11j/03/1968';&#xA;&#xA;UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '10/05/1964'&#xA;WHERE BIRTH_DATE = '10/50/1964';&#xA;&#xA;UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '11/11/1969'&#xA;WHERE BIRTH_DATE = '11*/11/1969';&#xA;&#xA;UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '12/17/1953'&#xA;WHERE BIRTH_DATE = '12/17*/1953';&#xA;&#xA;ALTER TABLE clientes_temp&#xA;&#xA;ALTER COLUMN BIRTH_DATE DATE;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '04/05/1943'&#xA;WHERE BIRTH_DATE = '44/45/1943';&#xA;&#xA;UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '11/03/1968'&#xA;WHERE BIRTH_DATE = '11j/03/1968';&#xA;&#xA;UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '10/05/1964'&#xA;WHERE BIRTH_DATE = '10/50/1964';&#xA;&#xA;UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '11/11/1969'&#xA;WHERE BIRTH_DATE = '11*/11/1969';&#xA;&#xA;UPDATE clientes_temp&#xA;&#xA;SET BIRTH_DATE = '12/17/1953'&#xA;WHERE BIRTH_DATE = '12/17*/1953';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1026,7 +1026,9 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Cargar int CLientes\cambiar de dato de BIRTH_DATE.Inputs[Data Conversion Input].Columns[BIRTH_DATE]"
-                      cachedDataType="dbDate"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
                       cachedName="BIRTH_DATE"
                       lineageId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
                   </inputColumns>
@@ -1873,7 +1875,9 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Cargar int CLientes\Sort.Inputs[Sort Input].Columns[BIRTH_DATE]"
-                      cachedDataType="dbDate"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
                       cachedName="BIRTH_DATE"
                       lineageId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]">
                       <properties>
@@ -2031,7 +2035,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Cargar int CLientes\Sort.Outputs[Sort Output].Columns[BIRTH_DATE]"
-                      dataType="dbDate"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
                       lineageId="Package\Cargar int CLientes\Sort.Outputs[Sort Output].Columns[BIRTH_DATE]"
                       name="BIRTH_DATE">
                       <properties>
@@ -2509,10 +2515,12 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
-                      dataType="dbDate"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
+                      length="255"
                       lineageId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
                       name="BIRTH_DATE"
                       truncationRowDisposition="FailComponent" />
@@ -2581,7 +2589,9 @@
                       name="FULL_NAME" />
                     <externalMetadataColumn
                       refId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
-                      dataType="dbDate"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
                       name="BIRTH_DATE" />
                     <externalMetadataColumn
                       refId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
@@ -2635,7 +2645,9 @@
                       name="FULL_NAME" />
                     <outputColumn
                       refId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
-                      dataType="dbDate"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
                       lineageId="Package\Cargar int CLientes\tem_Region.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
                       name="BIRTH_DATE" />
                     <outputColumn
@@ -4539,7 +4551,9 @@
                       name="FULL_NAME" />
                     <externalMetadataColumn
                       refId="Package\Union\clientes_temp.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
-                      dataType="dbDate"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
                       name="BIRTH_DATE" />
                     <externalMetadataColumn
                       refId="Package\Union\clientes_temp.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
@@ -5914,7 +5928,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
