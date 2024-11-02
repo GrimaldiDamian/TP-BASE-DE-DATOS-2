@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="SQL"
   DTS:PackageType="5"
-  DTS:VersionBuild="156"
-  DTS:VersionGUID="{787BA1A3-1F21-4B28-A534-DE961E78D1C1}">
+  DTS:VersionBuild="157"
+  DTS:VersionGUID="{524A0B4A-2E99-4441-BB81-5AF1548540E2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -51,7 +51,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACF/6T8tkxJ7Bsp6SNDut6YZzbcQr3L+zuUoygKT55wlgAAAAAOgAAAAAIAACAAAACe8veLxQxcFyVxtRUyRQIZ/3dmPpmP/bQcqSyIHhg3/CAAAAC0lKM2kZWYWQJbx0TO0l/s1PbepQFNt6k00EOXg2qvzkAAAAC5cBp+17qgyvvsEPW2pZEfZeZOUsjtYB2OV2E3TbWBhGLQ1v32dKv48IWVfVd8tFKxTR/uYWjvGpI8awWXUh9B</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABRRP+RTTKj6rBtGfdIKkCfLHMGdN9IzZAIYIpEuXd56gAAAAAOgAAAAAIAACAAAAAbS9S7N+mKV2v+BYiF8FpW/osvJdRZ0EtPOHQzsI2ILyAAAADFNkh+asuExVKSa+/F0/zvJ4onCluLcsDdGziW4NR6Y0AAAABVcqP4MyNz2Z6x0MG4P+9ldi+uII1RiCwGBgyFHx7WXynooVMe+DHwWmb+HJ929FNzsP3tjHI43LTi7Gr0WA5g</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -68,7 +68,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACwSTokvd8oWeJmYkXia9eV1g8sn+lpXVFxwNQjPEY4OQAAAAAOgAAAAAIAACAAAAAgb8IplYxcHZmMErhdsgjMvzTAWGYGJI5I8u48MY+p4iAAAABh1kxkCkFDxOdgBaFVnKb/2zTR1Ts6NVHFOc1J1PrXfUAAAADgZhGcQjJf+p1xOzBsrWc2l7VijKkuRee2CWsaIlk4qReCFPTlopAvApnvsipA6GimU+9ru5b/L7CgIZjekrd4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB3ZRDHIafhW2H8khkfqPwLU6gutJ91GSCF0fNHx/dnegAAAAAOgAAAAAIAACAAAADp7srJI2rOw1kZTj6W29nNTT/pr191D7p1ZkpIHxCLUCAAAAA1yzH7/xAFF0bunn0KOJSpV/8an3SFMw5uydgvYLk+YUAAAADMmbrQCx36++kxIhCh5xA/6cgCOWdOa3tATG91hKMW/zhW3e3EkqAhafpWxqok6VRscHH0qdWhIoLurbcfyDp4</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -113,7 +113,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="BORRAR MySQL"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -130,7 +130,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="BORRAR SQL"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1188,12 +1188,13 @@ select
 	v.DATE,
 	v.quantity * p.PRICE AS TOTAL,
 	v.quantity * p.PRICE * (1-d.descuento)  AS TOTAL_CON_DESCUENTO,
+	d.descuento,
 	p.PRICE,
 	d.descuento AS DESCUENTO,
 	case when pr.Envase = 'Lata' then v.quantity else 0 end LATAS_VENDIDAS,
 	ROUND(pr.Cantidad * v.quantity, 4) AS LITROS_VENDIDOS
 from dbo.temp_ventas v
-left join dbo.int_Precios_G01 p
+inner join dbo.int_Precios_G01 p
 on v.product_id = p.PRODUCT_ID
 and v.date &gt;= p.[FROM]
 and (v.date &lt; p.UNTIL or p.UNTIL is null)
@@ -1421,6 +1422,17 @@ LEFT JOIN datawarehouse_2024_G01.dbo.Dim_RangoEtario_G01 RE
                       lineageId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Output].Columns[LITROS_VENDIDOS]"
                       name="LITROS_VENDIDOS"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Output].Columns[descuento]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Output].ExternalColumns[descuento]"
+                      lineageId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Output].Columns[descuento]"
+                      name="descuento"
+                      precision="18"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1508,6 +1520,12 @@ LEFT JOIN datawarehouse_2024_G01.dbo.Dim_RangoEtario_G01 RE
                       refId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Output].ExternalColumns[LITROS_VENDIDOS]"
                       dataType="r8"
                       name="LITROS_VENDIDOS" />
+                    <externalMetadataColumn
+                      refId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Output].ExternalColumns[descuento]"
+                      dataType="numeric"
+                      name="descuento"
+                      precision="18"
+                      scale="6" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1595,6 +1613,13 @@ LEFT JOIN datawarehouse_2024_G01.dbo.Dim_RangoEtario_G01 RE
                       dataType="r8"
                       lineageId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Error Output].Columns[TOTAL_CON_DESCUENTO]"
                       name="TOTAL_CON_DESCUENTO" />
+                    <outputColumn
+                      refId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Error Output].Columns[descuento]"
+                      dataType="numeric"
+                      lineageId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Error Output].Columns[descuento]"
+                      name="descuento"
+                      precision="18"
+                      scale="6" />
                     <outputColumn
                       refId="Package\carga int_Ventas_G01\temp_Ventas.Outputs[OLE DB Source Error Output].Columns[PRICE]"
                       dataType="r8"
@@ -6304,9 +6329,17 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
           Id="Package\Carga SQL"
           TopLeft="334,87" />
         <NodeLayout
+          Size="158,42"
+          Id="Package\FACT_VENTAS"
+          TopLeft="452,530" />
+        <NodeLayout
           Size="141,42"
           Id="Package\temp Ventas"
           TopLeft="463,257" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\TRUNCATE TABLA FACT_VENTAS"
+          TopLeft="409,465" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="399.25,58">
@@ -6485,14 +6518,6 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="158,42"
-          Id="Package\FACT_VENTAS"
-          TopLeft="452,530" />
-        <NodeLayout
-          Size="258,42"
-          Id="Package\TRUNCATE TABLA FACT_VENTAS"
-          TopLeft="409,465" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 7]"
           TopLeft="539,434">
@@ -6544,7 +6569,7 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
     design-time-name="Package\CARGA INT PRECIOS Y DESCUENTOS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,42"
           Id="Package\CARGA INT PRECIOS Y DESCUENTOS\int_Descuento_G01"
@@ -6580,9 +6605,7 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6604,9 +6627,7 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6665,13 +6686,13 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="158,42"
-          Id="Package\carga int_Ventas_G01\int_Ventas_G01"
-          TopLeft="362,161" />
-        <NodeLayout
           Size="144,42"
           Id="Package\carga int_Ventas_G01\temp_Ventas"
           TopLeft="367,78" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\carga int_Ventas_G01\int_Ventas_G01"
+          TopLeft="362,161" />
         <EdgeLayout
           Id="Package\carga int_Ventas_G01.Paths[OLE DB Source Output]"
           TopLeft="440,120">
@@ -6982,10 +7003,86 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\FACT_VENTAS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\FACT_VENTAS\int_Ventas_G01"
+          TopLeft="385,64" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\FACT_VENTAS\fact_Ventas"
+          TopLeft="393,147" />
+        <EdgeLayout
+          Id="Package\FACT_VENTAS.Paths[OLE DB Source Output]"
+          TopLeft="462.75,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FACT_VENTAS\fact_Ventas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FACT_VENTAS\int_Ventas_G01">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\temp Ventas">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\temp Ventas\Data Conversion 1"
+          TopLeft="11,227" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\temp Ventas\Sort"
+          TopLeft="284,73" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\temp Ventas\temp_Ventas"
+          TopLeft="200,401" />
         <NodeLayout
           Size="133,42"
           Id="Package\temp Ventas\Merge Join"
@@ -6995,18 +7092,6 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
           Id="Package\temp Ventas\Data Conversion"
           TopLeft="376,225" />
         <NodeLayout
-          Size="144,42"
-          Id="Package\temp Ventas\temp_Ventas"
-          TopLeft="200,401" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\temp Ventas\billing_detail"
-          TopLeft="484,2" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\temp Ventas\Data Conversion 1"
-          TopLeft="11,227" />
-        <NodeLayout
           Size="132,42"
           Id="Package\temp Ventas\Union All 1"
           TopLeft="209,328" />
@@ -7015,6 +7100,10 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
           Id="Package\temp Ventas\Sort 1"
           TopLeft="498,69" />
         <NodeLayout
+          Size="140,42"
+          Id="Package\temp Ventas\billing_detail"
+          TopLeft="484,2" />
+        <NodeLayout
           Size="144,42"
           Id="Package\temp Ventas\biling MySQL"
           TopLeft="265,3" />
@@ -7022,10 +7111,62 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
           Size="109,42"
           Id="Package\temp Ventas\Billing"
           TopLeft="48.5,153.5" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\temp Ventas\Sort"
-          TopLeft="284,73" />
+        <EdgeLayout
+          Id="Package\temp Ventas.Paths[Union All Output 1]"
+          TopLeft="273.5,370">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\temp Ventas.Paths[Sort Output1]"
+          TopLeft="552,111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79.6666666666667,39"
+              Start="0,0"
+              End="-79.6666666666667,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1218424962853" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1218424962853"
+                    Point2="0,23.1218424962853"
+                    Point3="-4,23.1218424962853" />
+                  <mssgle:LineSegment
+                    End="-75.6666666666667,23.1218424962853" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.6666666666667,23.1218424962853"
+                    Point2="-79.6666666666667,23.1218424962853"
+                    Point3="-79.6666666666667,27.1218424962853" />
+                  <mssgle:LineSegment
+                    End="-79.6666666666667,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\temp Ventas.Paths[Sort Output]"
           TopLeft="333.5,115">
@@ -7216,62 +7357,6 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\temp Ventas.Paths[Union All Output 1]"
-          TopLeft="273.5,370">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31"
-              Start="0,0"
-              End="0,23.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\temp Ventas.Paths[Sort Output1]"
-          TopLeft="552,111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-79.6666666666667,39"
-              Start="0,0"
-              End="-79.6666666666667,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.1218424962853" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.1218424962853"
-                    Point2="0,23.1218424962853"
-                    Point3="-4,23.1218424962853" />
-                  <mssgle:LineSegment
-                    End="-75.6666666666667,23.1218424962853" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-75.6666666666667,23.1218424962853"
-                    Point2="-79.6666666666667,23.1218424962853"
-                    Point3="-79.6666666666667,27.1218424962853" />
-                  <mssgle:LineSegment
-                    End="-79.6666666666667,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -7316,70 +7401,6 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\temp Ventas\Billing">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\FACT_VENTAS">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="158,42"
-          Id="Package\FACT_VENTAS\int_Ventas_G01"
-          TopLeft="385,64" />
-        <NodeLayout
-          Size="137,42"
-          Id="Package\FACT_VENTAS\fact_Ventas"
-          TopLeft="393,147" />
-        <EdgeLayout
-          Id="Package\FACT_VENTAS.Paths[OLE DB Source Output]"
-          TopLeft="462.75,106">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41"
-              Start="0,0"
-              End="0,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_VENTAS\int_Ventas_G01">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_VENTAS\fact_Ventas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
