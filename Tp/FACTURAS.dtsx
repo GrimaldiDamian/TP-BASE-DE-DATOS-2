@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="SQL"
   DTS:PackageType="5"
-  DTS:VersionBuild="157"
-  DTS:VersionGUID="{524A0B4A-2E99-4441-BB81-5AF1548540E2}">
+  DTS:VersionBuild="158"
+  DTS:VersionGUID="{BB4FA2F6-94C1-411D-8362-EB651632499C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -51,7 +51,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABRRP+RTTKj6rBtGfdIKkCfLHMGdN9IzZAIYIpEuXd56gAAAAAOgAAAAAIAACAAAAAbS9S7N+mKV2v+BYiF8FpW/osvJdRZ0EtPOHQzsI2ILyAAAADFNkh+asuExVKSa+/F0/zvJ4onCluLcsDdGziW4NR6Y0AAAABVcqP4MyNz2Z6x0MG4P+9ldi+uII1RiCwGBgyFHx7WXynooVMe+DHwWmb+HJ929FNzsP3tjHI43LTi7Gr0WA5g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAWp3sCC1sID5QGZuOedL34Ta8fwqjJn4wvA5VhsSbkrAAAAAAOgAAAAAIAACAAAAABF7YtirB5Tb106Jme/pjajGVs/28QTdGInJsw/vXnxCAAAACxetXFR+jXfk78J3xJOLuI/cPvZyLOtXES42aGsChiGkAAAACde335JoELOUMAayCvoyjn07z1DHMfSQ9iG502mIcyxiXwKnA2oTsN6xY2bqW01jKgXI06ejM4GAszfd6II9+T</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -68,7 +68,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB3ZRDHIafhW2H8khkfqPwLU6gutJ91GSCF0fNHx/dnegAAAAAOgAAAAAIAACAAAADp7srJI2rOw1kZTj6W29nNTT/pr191D7p1ZkpIHxCLUCAAAAA1yzH7/xAFF0bunn0KOJSpV/8an3SFMw5uydgvYLk+YUAAAADMmbrQCx36++kxIhCh5xA/6cgCOWdOa3tATG91hKMW/zhW3e3EkqAhafpWxqok6VRscHH0qdWhIoLurbcfyDp4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJOn5hCX5D0OYSyU3boGSdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACZdm/GwtrCdhICYKFO/sJ3lAqFBk2L4vvaWR5VIGcvjQAAAAAOgAAAAAIAACAAAADEt9fWKSSrK/phUKWbaqPoT/g4XXeWFQZO1bzuECsbjiAAAADwx43MFDWQmBDkqsKG270v/2Mb5w0cT3+grp0+bhuBBUAAAAC1pLYXEJuZsf9pnGxBZJ9wOJqe2f93jlmJW1jUrq7w0ZGJ5megb8k7EYpfCWe0rKaaN6kKPO3aGFf5sEGXsE0+</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -5764,26 +5764,6 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[VENTAS_KEY]"
-                      dataType="i4"
-                      name="VENTAS_KEY" />
-                    <externalMetadataColumn
-                      refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[REGION_KEY]"
-                      dataType="i4"
-                      name="REGION_KEY" />
-                    <externalMetadataColumn
-                      refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[EMPLEADO_KEY]"
-                      dataType="i4"
-                      name="EMPLEADO_KEY" />
-                    <externalMetadataColumn
-                      refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[CLIENTE_KEY]"
-                      dataType="i4"
-                      name="CLIENTE_KEY" />
-                    <externalMetadataColumn
-                      refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTO_KEY]"
-                      dataType="i4"
-                      name="PRODUCTO_KEY" />
-                    <externalMetadataColumn
                       refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ID]"
                       codePage="1252"
                       dataType="str"
@@ -5821,14 +5801,6 @@ group by billing_id, date, customer_id, employee_id, product_id, region</propert
                       refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[DATE]"
                       dataType="dbDate"
                       name="DATE" />
-                    <externalMetadataColumn
-                      refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[TIEMPO_KEY]"
-                      dataType="i4"
-                      name="TIEMPO_KEY" />
-                    <externalMetadataColumn
-                      refId="Package\temp Ventas\temp_Ventas.Inputs[OLE DB Destination Input].ExternalColumns[RANGO_ETARIO_KEY]"
-                      dataType="i4"
-                      name="RANGO_ETARIO_KEY" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
