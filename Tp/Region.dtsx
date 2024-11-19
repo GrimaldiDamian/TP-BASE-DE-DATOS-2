@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="REGION"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{C4A7C717-2ED7-4E77-8555-7482B84EFF98}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{14E1835B-BE37-4635-8FE8-79DB667F27E8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -218,9 +218,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Cargar Dim Region\Dim_Region_G01.Inputs[Slowly Changing Dimension Input].Columns[Codigo Postal]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Codigo Postal"
                       externalMetadataColumnId="Package\Cargar Dim Region\Dim_Region_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[Codigo Postal]"
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Codigo Postal]">
@@ -272,9 +270,7 @@
                       name="Ciudad" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Region\Dim_Region_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Codigo Postal" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Region\Dim_Region_G01.Inputs[Slowly Changing Dimension Input].ExternalColumns[Estado]"
@@ -440,9 +436,7 @@
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Ciudad]" />
                     <inputColumn
                       refId="Package\Cargar Dim Region\Insertar destino.Inputs[OLE DB Destination Input].Columns[Codigo Postal]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Codigo Postal"
                       externalMetadataColumnId="Package\Cargar Dim Region\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[Codigo Postal]"
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Codigo Postal]" />
@@ -473,9 +467,7 @@
                       name="Ciudad" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Region\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Codigo Postal" />
                   </externalMetadataColumns>
                 </input>
@@ -610,12 +602,10 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].ExternalColumns[Codigo Postal]"
-                      length="255"
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Codigo Postal]"
                       name="Codigo Postal"
                       truncationRowDisposition="FailComponent" />
@@ -646,9 +636,7 @@
                       name="Ciudad" />
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].ExternalColumns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Codigo Postal" />
                   </externalMetadataColumns>
                 </output>
@@ -685,9 +673,7 @@
                       name="Ciudad" />
                     <outputColumn
                       refId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Error Output].Columns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Error Output].Columns[Codigo Postal]"
                       name="Codigo Postal" />
                     <outputColumn
@@ -757,9 +743,7 @@
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Ciudad]" />
                     <inputColumn
                       refId="Package\Cargar Dim Region\OLE DB Command.Inputs[OLE DB Command Input].Columns[Codigo Postal]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Codigo Postal"
                       externalMetadataColumnId="Package\Cargar Dim Region\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Codigo Postal]" />
@@ -823,15 +807,13 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Region\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Param_3">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -919,9 +901,7 @@
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Ciudad]" />
                     <inputColumn
                       refId="Package\Cargar Dim Region\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Codigo Postal]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="i4"
                       cachedName="Codigo Postal"
                       externalMetadataColumnId="Package\Cargar Dim Region\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Cargar Dim Region\int_Region_G01.Outputs[OLE DB Source Output].Columns[Codigo Postal]" />
@@ -985,15 +965,13 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Cargar Dim Region\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Param_3">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -1650,7 +1628,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[int_Region_G01]</property>
+                  name="OpenRowset">[int_Region_G01]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1772,9 +1750,7 @@
                       name="Ciudad" />
                     <externalMetadataColumn
                       refId="Package\Cargar Region int\int_Region_G01.Inputs[OLE DB Destination Input].ExternalColumns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Codigo Postal" />
                   </externalMetadataColumns>
                 </input>
@@ -1999,22 +1975,6 @@
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Cargar Region int\Sort.Inputs[Sort Input].Columns[REGION_KEY]"
-                      cachedDataType="i4"
-                      cachedName="REGION_KEY"
-                      lineageId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].Columns[REGION_KEY]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Cargar Region int\Sort.Inputs[Sort Input].Columns[Region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -2096,19 +2056,6 @@
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar Region int\Sort.Outputs[Sort Output].Columns[REGION_KEY]"
-                      dataType="i4"
-                      lineageId="Package\Cargar Region int\Sort.Outputs[Sort Output].Columns[REGION_KEY]"
-                      name="REGION_KEY">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].Columns[REGION_KEY]}</property>
-                      </properties>
-                    </outputColumn>
                     <outputColumn
                       refId="Package\Cargar Region int\Sort.Outputs[Sort Output].Columns[Region]"
                       codePage="1252"
@@ -2199,22 +2146,6 @@
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Cargar Region int\Sort 1.Inputs[Sort Input].Columns[REGION_KEY]"
-                      cachedDataType="i4"
-                      cachedName="REGION_KEY"
-                      lineageId="Package\Cargar Region int\dim_Region.Outputs[OLE DB Source Output].Columns[REGION_KEY]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Cargar Region int\Sort 1.Inputs[Sort Input].Columns[Region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -2286,6 +2217,22 @@
                           name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Region int\Sort 1.Inputs[Sort Input].Columns[REGION_KEY]"
+                      cachedDataType="i4"
+                      cachedName="REGION_KEY"
+                      lineageId="Package\Cargar Region int\dim_Region.Outputs[OLE DB Source Output].Columns[REGION_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2296,19 +2243,6 @@
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar Region int\Sort 1.Outputs[Sort Output].Columns[REGION_KEY]"
-                      dataType="i4"
-                      lineageId="Package\Cargar Region int\Sort 1.Outputs[Sort Output].Columns[REGION_KEY]"
-                      name="REGION_KEY">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Cargar Region int\dim_Region.Outputs[OLE DB Source Output].Columns[REGION_KEY]}</property>
-                      </properties>
-                    </outputColumn>
                     <outputColumn
                       refId="Package\Cargar Region int\Sort 1.Outputs[Sort Output].Columns[Region]"
                       codePage="1252"
@@ -2368,6 +2302,19 @@
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
                           name="SortColumnId">#{Package\Cargar Region int\dim_Region.Outputs[OLE DB Source Output].Columns[Codigo Postal]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Region int\Sort 1.Outputs[Sort Output].Columns[REGION_KEY]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Region int\Sort 1.Outputs[Sort Output].Columns[REGION_KEY]"
+                      name="REGION_KEY">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Region int\dim_Region.Outputs[OLE DB Source Output].Columns[REGION_KEY]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2437,15 +2384,6 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].Columns[REGION_KEY]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].ExternalColumns[REGION_KEY]"
-                      lineageId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].Columns[REGION_KEY]"
-                      name="REGION_KEY"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].Columns[Region]"
                       codePage="1252"
                       dataType="str"
@@ -2493,32 +2431,26 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].ExternalColumns[REGION_KEY]"
-                      dataType="i4"
-                      name="REGION_KEY" />
-                    <externalMetadataColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].ExternalColumns[Region]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="Region" />
                     <externalMetadataColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].ExternalColumns[Estado]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="Estado" />
                     <externalMetadataColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].ExternalColumns[Ciudad]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="Ciudad" />
                     <externalMetadataColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Output].ExternalColumns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       name="Codigo Postal" />
                   </externalMetadataColumns>
                 </output>
@@ -2528,36 +2460,29 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[REGION_KEY]"
-                      dataType="i4"
-                      lineageId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[REGION_KEY]"
-                      name="REGION_KEY" />
-                    <outputColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[Region]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       lineageId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[Region]"
                       name="Region" />
                     <outputColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[Estado]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       lineageId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[Estado]"
                       name="Estado" />
                     <outputColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[Ciudad]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       lineageId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[Ciudad]"
                       name="Ciudad" />
                     <outputColumn
                       refId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="i4"
                       lineageId="Package\Cargar Region int\temp_Region.Outputs[OLE DB Source Error Output].Columns[Codigo Postal]"
                       name="Codigo Postal" />
                     <outputColumn
@@ -2622,6 +2547,88 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Cargar Region temp\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Cargar Region temp\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar Region temp\Derived Column.Inputs[Derived Column Input].Columns[Codigo Postal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Codigo Postal"
+                      lineageId="Package\Cargar Region temp\Region Staging.Outputs[OLE DB Source Output].Columns[Codigo Postal]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Cargar Region temp\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)#{Package\Cargar Region temp\Region Staging.Outputs[OLE DB Source Output].Columns[Codigo Postal]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)[Codigo Postal]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Cargar Region temp\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Cargar Region temp\Region Staging"
               componentClassID="Microsoft.OLEDBSource"
@@ -2822,7 +2829,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Region_temp]</property>
+                  name="OpenRowset">[Region_temp]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2903,13 +2910,11 @@
                       externalMetadataColumnId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].ExternalColumns[Ciudad]"
                       lineageId="Package\Cargar Region temp\Region Staging.Outputs[OLE DB Source Output].Columns[Ciudad]" />
                     <inputColumn
-                      refId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].Columns[Codigo Postal]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Codigo Postal"
+                      refId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].Columns[Derived Column 1]"
+                      cachedDataType="i4"
+                      cachedName="Derived Column 1"
                       externalMetadataColumnId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].ExternalColumns[Codigo Postal]"
-                      lineageId="Package\Cargar Region temp\Region Staging.Outputs[OLE DB Source Output].Columns[Codigo Postal]" />
+                      lineageId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2917,30 +2922,24 @@
                       refId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="Region" />
                     <externalMetadataColumn
                       refId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].ExternalColumns[Estado]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="Estado" />
                     <externalMetadataColumn
                       refId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].ExternalColumns[Ciudad]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="Ciudad" />
                     <externalMetadataColumn
                       refId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].ExternalColumns[Codigo Postal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="r8"
                       name="Codigo Postal" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input].ExternalColumns[REGION_KEY]"
-                      dataType="i4"
-                      name="REGION_KEY" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2972,8 +2971,13 @@
           </components>
           <paths>
             <path
-              refId="Package\Cargar Region temp.Paths[OLE DB Source Output]"
+              refId="Package\Cargar Region temp.Paths[Derived Column Output]"
               endId="Package\Cargar Region temp\Region_temp.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Cargar Region temp\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Cargar Region temp.Paths[OLE DB Source Output]"
+              endId="Package\Cargar Region temp\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Cargar Region temp\Region Staging.Outputs[OLE DB Source Output]" />
           </paths>
@@ -3195,61 +3199,13 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\Cargar Dim Region\Insertar destino"
-          TopLeft="5.50000000000006,209.5" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Cargar Dim Region\OLE DB Command 1"
-          TopLeft="455,209.5" />
-        <NodeLayout
           Size="159,42"
           Id="Package\Cargar Dim Region\int_Region_G01"
           TopLeft="228.5,5.49999999999989" />
         <NodeLayout
-          Size="173,42"
-          Id="Package\Cargar Dim Region\OLE DB Command"
-          TopLeft="221.5,209.5" />
-        <NodeLayout
           Size="166,42"
           Id="Package\Cargar Dim Region\Dim_Region_G01"
           TopLeft="225,107.5" />
-        <EdgeLayout
-          Id="Package\Cargar Dim Region.Paths[Changing Attribute Updates Output]"
-          TopLeft="347.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="198.5,60"
-              Start="0,0"
-              End="198.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.6324110671937" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.6324110671937"
-                    Point2="0,20.6324110671937"
-                    Point3="4,20.6324110671937" />
-                  <mssgle:LineSegment
-                    End="194.5,20.6324110671937" />
-                  <mssgle:CubicBezierSegment
-                    Point1="194.5,20.6324110671937"
-                    Point2="198.5,20.6324110671937"
-                    Point3="198.5,24.6324110671937" />
-                  <mssgle:LineSegment
-                    End="198.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="20.71609375,25.6324110671937,157.0678125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Cargar Dim Region.Paths[OLE DB Source Output]"
           TopLeft="308,47.4999999999999">
@@ -3272,6 +3228,10 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Cargar Dim Region\Insertar destino"
+          TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
           Id="Package\Cargar Dim Region.Paths[New Output]"
           TopLeft="268.5,149.5">
@@ -3308,6 +3268,10 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Cargar Dim Region\OLE DB Command"
+          TopLeft="221.5,209.5" />
         <EdgeLayout
           Id="Package\Cargar Dim Region.Paths[Inferred Member Updates Output]"
           TopLeft="308,149.5">
@@ -3329,6 +3293,46 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-74.40298828125,20.4208984375,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Cargar Dim Region\OLE DB Command 1"
+          TopLeft="455,209.5" />
+        <EdgeLayout
+          Id="Package\Cargar Dim Region.Paths[Changing Attribute Updates Output]"
+          TopLeft="347.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="198.5,60"
+              Start="0,0"
+              End="198.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6324110671937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.6324110671937"
+                    Point2="0,20.6324110671937"
+                    Point3="4,20.6324110671937" />
+                  <mssgle:LineSegment
+                    End="194.5,20.6324110671937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="194.5,20.6324110671937"
+                    Point2="198.5,20.6324110671937"
+                    Point3="198.5,24.6324110671937" />
+                  <mssgle:LineSegment
+                    End="198.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="20.71609375,25.6324110671937,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3452,18 +3456,6 @@
           Id="Package\Cargar Region int\int_Region_G01"
           TopLeft="232,281" />
         <NodeLayout
-          Size="99,42"
-          Id="Package\Cargar Region int\Sort"
-          TopLeft="134,125" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Cargar Region int\Sort 1"
-          TopLeft="388,124" />
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Cargar Region int\Merge Join"
-          TopLeft="245,207" />
-        <NodeLayout
           Size="144,42"
           Id="Package\Cargar Region int\temp_Region"
           TopLeft="115,59" />
@@ -3471,110 +3463,122 @@
           Size="138,42"
           Id="Package\Cargar Region int\dim_Region"
           TopLeft="378,57" />
-        <EdgeLayout
-          Id="Package\Cargar Region int.Paths[Sort Output1]"
-          TopLeft="442,166">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-109.666666666667,41"
-              Start="0,0"
-              End="-109.666666666667,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3075780089153" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.3075780089153"
-                    Point2="0,24.3075780089153"
-                    Point3="-4,24.3075780089153" />
-                  <mssgle:LineSegment
-                    End="-105.666666666667,24.3075780089153" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-105.666666666667,24.3075780089153"
-                    Point2="-109.666666666667,24.3075780089153"
-                    Point3="-109.666666666667,28.3075780089153" />
-                  <mssgle:LineSegment
-                    End="-109.666666666667,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cargar Region int.Paths[Sort Output]"
-          TopLeft="183.5,167">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="107.166666666667,40"
-              Start="0,0"
-              End="107.166666666667,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.7147102526003" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.7147102526003"
-                    Point2="0,23.7147102526003"
-                    Point3="4,23.7147102526003" />
-                  <mssgle:LineSegment
-                    End="103.166666666667,23.7147102526003" />
-                  <mssgle:CubicBezierSegment
-                    Point1="103.166666666667,23.7147102526003"
-                    Point2="107.166666666667,23.7147102526003"
-                    Point3="107.166666666667,27.7147102526003" />
-                  <mssgle:LineSegment
-                    End="107.166666666667,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cargar Region int.Paths[OLE DB Source Output1]"
-          TopLeft="444.5,99">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,25"
-              Start="0,0"
-              End="0,17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Cargar Region int\Sort"
+          TopLeft="137,130" />
         <EdgeLayout
           Id="Package\Cargar Region int.Paths[OLE DB Source Output]"
-          TopLeft="185.25,101">
+          TopLeft="186.75,101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24"
+              EndConnector="0,29"
               Start="0,0"
-              End="0,16.5">
+              End="0,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Cargar Region int\Sort 1"
+          TopLeft="392,126" />
+        <EdgeLayout
+          Id="Package\Cargar Region int.Paths[OLE DB Source Output1]"
+          TopLeft="446.5,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Cargar Region int\Merge Join"
+          TopLeft="240,204" />
+        <EdgeLayout
+          Id="Package\Cargar Region int.Paths[Sort Output]"
+          TopLeft="186.5,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.1666666666667,32"
+              Start="0,0"
+              End="99.1666666666667,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9717682020802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9717682020802"
+                    Point2="0,18.9717682020802"
+                    Point3="4,18.9717682020802" />
+                  <mssgle:LineSegment
+                    End="95.1666666666667,18.9717682020802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.1666666666667,18.9717682020802"
+                    Point2="99.1666666666667,18.9717682020802"
+                    Point3="99.1666666666667,22.9717682020802" />
+                  <mssgle:LineSegment
+                    End="99.1666666666667,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar Region int.Paths[Sort Output1]"
+          TopLeft="446,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-118.666666666667,36"
+              Start="0,0"
+              End="-118.666666666667,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3432392273403" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3432392273403"
+                    Point2="0,21.3432392273403"
+                    Point3="-4,21.3432392273403" />
+                  <mssgle:LineSegment
+                    End="-114.666666666667,21.3432392273403" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-114.666666666667,21.3432392273403"
+                    Point2="-118.666666666667,21.3432392273403"
+                    Point3="-118.666666666667,25.3432392273403" />
+                  <mssgle:LineSegment
+                    End="-118.666666666667,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3585,18 +3589,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Cargar Region int.Paths[Merge Join Output]"
-          TopLeft="311.5,249">
+          TopLeft="309,246">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,24.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3638,7 +3642,7 @@
     design-time-name="Package\Cargar Region temp">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154,42"
           Id="Package\Cargar Region temp\Region Staging"
@@ -3646,10 +3650,36 @@
         <NodeLayout
           Size="144,42"
           Id="Package\Cargar Region temp\Region_temp"
-          TopLeft="152,111" />
+          TopLeft="151,178" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Cargar Region temp\Derived Column"
+          TopLeft="149,108" />
         <EdgeLayout
           Id="Package\Cargar Region temp.Paths[OLE DB Source Output]"
-          TopLeft="224.5,83">
+          TopLeft="226.5,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar Region temp.Paths[Derived Column Output]"
+          TopLeft="225.5,150">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3672,6 +3702,19 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar Region temp\Region Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Cargar Region temp\Region_temp">
     <Properties>

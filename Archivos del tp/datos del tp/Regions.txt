@@ -1,6 +1,6 @@
 West   |California |San Jose    |91520
 West   |California |Morgan Hill |95200
-West   |California |Gilroy      |95300       
+West   |California |Gilroy      |95300
 East   |New York   |Manhattan   |12111
 East   |New York   |Manhattan   |12112
 East   |New York   |Manhattan   |12113
