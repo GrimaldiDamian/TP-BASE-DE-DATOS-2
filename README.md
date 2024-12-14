@@ -33,9 +33,3 @@ Dim_Cliente: Datos de clientes mayoristas y minoristas.
 Dim_Tiempo: Tabla de tiempo que permite desglosar las ventas por períodos específicos.
 Dim_RangoEtario: Tabla de rango etario donde se desglosa, varios rango como Teenagers, adultos medios, adultos mayores.
 Fact_ventas: Almacena las transacciones de ventas, vinculadas a las tablas dimensional
-
-## Cómo Ejecutar el Proyecto
-Instalación de SQL Server: Asegúrate de tener SQL Server y SSIS configurados correctamente.
-Scripts SQL: Ejecuta los scripts para crear las tablas del Data Mart y poblarlas con datos.
-Procesos ETL: Configura y ejecuta los paquetes SSIS para cargar los datos en el Data Mart.
-Consultas e Informes: Utiliza las consultas provistas o crea nuevas para analizar los datos según las necesidades del área de finanzas.
